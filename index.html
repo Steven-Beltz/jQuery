@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h3 {
+            text-align: center;
+        }
+        p {
+            display: inline;
+        }
+        button {
+            margin: 10px;
+        }
+        .blueFont {
+            color: blue;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('p.show').hide();
+            $('p.slideD').hide();
+            $('p.fadeN').hide();
+            var title = $('p.attr').attr("title");
+
+            $('button.click').click(function(event){
+                alert("proof this clicks");
+            });
+            $('button.hide').click(function(event){
+                $('p.hide').hide();
+            })
+            $('button.show').click(function(event){
+                $('p.show').show();
+            });
+            $('button.toggle').click(function(event){
+                $('p.toggle').toggle();
+            });
+            $('button.slideD').click(function(event){
+                $('p.slideD').slideDown();
+            });
+            $('button.slideU').click(function(event){
+                $('p.slideU').slideUp();
+            });
+            $('button.slideT').click(function(event){
+                $('p.slideT').slideToggle();
+            });
+            $('button.fadeN').click(function(event){
+                $('p.fadeN').fadeIn();
+            });
+            $('button.fadeO').click(function(event){
+                $('p.fadeO').fadeOut();
+            });
+            $('button.addClass').click(function(event){
+                $('p.addClass').addClass("blueFont");
+            });
+            $('button.before').click(function(event){
+                $('p.before').before("<h3>NEW CONTENT<h3>");
+            });
+            $('button.after').click(function(event){
+                $('p.after').after("<h3>NEW CONTENT<h3>");
+            });
+            $('button.append').click(function(event){
+                $('p.append').append("<p>NEW CONTENT<p>");
+            });
+            $('button.html').click(function(event){
+                $('p.html').html("<a>A new Link<a><p> and some Text replaces the previous tags<p>");
+            });
+            $('button.attr').click(function(event){
+                $('div').text(title);
+            });
+            $('button.val').click(function(){
+                var text = $(this).text();
+                $('input').val(text);
+            });
+            $('button.poe').click(function(){
+                $('p.text').text('text changed!');
+            });
+        });
+        </script>
+</head>
+<body>
+    <h3>Click</h3>
+    <button class="click">Click</button>
+    <p>Bind an event handler to the "click" JavaScript event, or trigger that event on an element.</p>
+    <hr>
+
+    <h3>Hide</h3>
+    <button class="hide">Hide</button>
+    <p class="hide">Hide the matched elements.</p>
+    <hr>
+
+    <h3>Show</h3>
+    <button class="show">Show</button>
+    <p class="show">Display the matched elements.</p>
+    <hr>
+
+    <h3>Toggle</h3>
+    <button class="toggle">Toggle</button>
+    <p class="toggle">Display or hide the matched elements.</p>
+    <hr>
+
+    <h3>slideDown</h3>
+    <button class="slideD">slideDown</button>
+    <p class="slideD">Display the matched elements with a sliding motion.</p>
+    <hr>
+
+    <h3>slideUp</h3>
+    <button class="slideU">slideUp</button>
+    <p class="slideU">Hide the matched elements with a sliding motion.</p>
+    <hr>
+
+    <h3>slideToggle</h3>
+    <button class="slideT">slideToggle</button>
+    <p class="slideT">Display or hide the matched elements with a sliding motion.</p>
+    <hr>
+
+    <h3>fadeIn</h3>
+    <button class="fadeN">fadeIn</button>
+    <p class="fadeN">Display the matched elements by fading them to opaque.</p>
+    <hr>
+
+    <h3>fadeOut</h3>
+    <button class="fadeO">fadeOut</button>
+    <p class="fadeO">Hide the matched elements by fading them to transparent.</p>
+    <hr>
+
+    <h3>addClass</h3>
+    <button class="addClass">addClass</button>
+    <p class="addClass">Adds the specified class(es) to each element in the set of matched elements.</p>
+    <hr>
+
+    <h3>before</h3>
+    <button class="before">before</button>
+    <p class="before">Insert content, specified by the parameter, before each element in the set of matched elements.</p>
+    <hr>
+
+    <h3>after</h3>
+    <button class="after">after</button>
+    <p class="after">Insert content, specified by the parameter, after each element in the set of matched elements.</p>
+    <hr>
+
+    <h3>append</h3>
+    <button class="append">append</button>
+    <p class="append">Insert content, specified by the parameter, to the end of each element in the set of matched elements.</p>
+    <hr>
+
+    <h3>html</h3>
+    <button class="html">html</button>
+    <p class="html">Get the HTML contents of the first element in the set of matched elements or set the HTML contents of every matched element.</p>
+    <hr>
+
+    <h3>attr</h3>
+    <button class="attr" title="Blue">attr</button>
+    <p class="attr" title="SIKE">Get the value of an attribute for the first element in the set of matched elements
+        or set one or more attributes for every matched element.</p>
+    <div>Color Name Should Show Up Here</div>
+    <hr>
+
+    <h3>val</h3>
+    <button class="val">val</button>
+    <p class="val">Get the current value of the first element in the set of matched elements or set the value of every matched element.</p>
+    <div style="display: inline;">
+        <button class="val">Bop It</button>
+        <button class="val">Twist It</button>
+        <button class="val">Pull It</button>
+    </div>
+    <input type="click" value="click a button" style="display: inline;">
+    <hr>
+
+    <h3>text</h3>
+    <button class="poe">text</button>
+    <p class="text">Get the combined text contents of each element in the set of matched elements, including their descendants,
+        or set the text contents of the matched elements.</p>
+    <hr>
+    
+    
+</body>
+</html>
